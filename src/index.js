@@ -3,11 +3,55 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Checkout from './checkout'
+import { configureStore } from '@reduxjs/toolkit';
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  REGISTER,
+  PERSIST,
+  PAUSE,
+  PURGE
+} from 'redux-persist'
+import storage from 'redux-persist/lib/storage';
+import cartReducer from './redux/cartReducer'
+
+const persistConfig = {
+  key: 'root',
+  version: 1,
+  storage
+}
+
+const persistedReducer = persistReducer(persistConfig, cartReducer)
+const store = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoreActions: [FLUSH, REHYDRATE, REGISTER, PAUSE, PERSIST, PURGE],
+      }
+    })
+})
+let persistor = persistStore(store)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<App />} />
+            <Route path='checkout' element={<Checkout />} />
+          </Routes>
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
 

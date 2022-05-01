@@ -1,38 +1,250 @@
-.App {
-  text-align: center;
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+.leftSection {
+    display: flex;
+    list-style-type: none;
+}
+.rightSection {
+    display: flex;
+    list-style-type: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.left {
+    padding-right: 1.3rem;
+    font-weight: bold;
+    color: gray;
+    cursor: pointer;
+}
+.leftMain {
+    margin-right: 1.3rem;
+    width: auto;
+    padding-bottom: 0.8rem;
+    font-weight: bold;
+    border-bottom: 2px lightgreen solid;
+}
+.right {
+    padding-right: 1.3rem;
+    cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+    list-style-type: none;
+    margin-right: 7.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card {
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.secondCard {
+    flex: 1 0 21%;
+    margin: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.name {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.secondCard {
+  box-shadow: 0 4px 8px 0 rgba(136, 46, 46, 0.2);
+  transition: 0.3s;
+}
+
+.secondCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(42, 79, 180, 0.2);
+  background-color: beige;
+}
+
+.content {
+    background-color: aquamarine;
+  padding: 2px 16px;
+}
+
+.content:hover {
+    background-color: aqua;
+}
+
+.smallImg {
+    cursor: pointer;
+    border: black 0.1rem solid;
+    margin: 0.1rem;
+}
+
+.mainModal {
+    display: flex;
+}
+
+.secondModal {
+    display: inline;
+}
+
+.item {
+    border: lightgreen 0.1rem solid;
+    color: green;
+    margin: 0.2rem;
+    list-style-type: none;
+    width: auto;
+    padding: 0.4rem;
+    cursor: pointer;
+}
+
+.mainItem {
+    margin-top: -1.6rem;
+    margin-left: -2.7rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.addBtn {
+    cursor: pointer;
+    font-size: large;
+    background-color: green;
+    color: white;
+    padding: 0.7rem;
+    width: 12rem;
+    border: white 0.3rem solid;
+}
+
+.addBtn:disabled {
+    color: white;
+    background-color: #888;
+}
+/* The Modal (background) */
+.dropdown {
+    display: inline-block;
+}
+
+/* Modal Content/Box */
+.dropdown-content {
+    background-color: wheat;
+    margin: 0 auto;
+    left: 10;
+    right: 0;
+    z-index: 1;
+  display: none;
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+
+.dropdown-content h4 {
+    color: black;
+      padding-right: 2rem;
+    list-style-type: none;
+}
+
+.dropClose {
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.mainDrop {
+    display: flex;
+    flex-direction: column;
+}
+
+.inCart {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.cartDrop {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 0.1rem black solid;
+    border-top: 0.1rem black solid;
+}
+
+.symbol {
+    width: auto;
+    height: auto;
+    padding: 0.3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.remove {
+    width: fit-content;
+    font-weight: bold;
+    border-radius: 15%;
+    color: wheat;
+    cursor: pointer;
+    background-color: red;
+    border: white 0.1rem solid;
+}
+
+.checkout {
+    background-color: green;
+    font-weight: bold;
+    border: white 0.1rem solid;
+    margin: 0.3rem;
+    padding: 0.5rem;
+    color: white;
+}
+
+.shop {
+    background-color: rgb(34, 103, 146);
+    font-weight: bold;
+    border: white 0.1rem solid;
+    margin: 0.3rem;
+    padding: 0.5rem;
+    color: black;
+}
+
+.link {
+    color: whitesmoke;
+    text-decoration: none;
 }
