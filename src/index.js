@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Checkout from './checkout'
+import Checkout from './Checkout'
 import { configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
